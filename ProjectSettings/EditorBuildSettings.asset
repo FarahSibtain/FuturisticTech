@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Samples/Ready Player Me Core/6.0.1/QuickStart/QuickStart.unity
     guid: 82ffac477ce64fd46a57d2d423d0a5f6
+  - enabled: 0
+    path: Assets/Metaverese_Room/Metaverse_Room2.unity
+    guid: da47a2065ce913f49892f46a4926438d
   m_configObjects: {}

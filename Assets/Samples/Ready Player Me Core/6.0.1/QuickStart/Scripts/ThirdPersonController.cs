@@ -43,9 +43,9 @@ namespace ReadyPlayerMe.Samples.QuickStart
             
             avatar = target;
             thirdPersonMovement.Setup(avatar);
-            //animator = avatar.GetComponent<Animator>();
-            //animator.runtimeAnimatorController = runtimeAnimatorController;
-            //animator.applyRootMotion = false;
+            animator = avatar.GetComponent<Animator>();
+            animator.runtimeAnimatorController = runtimeAnimatorController;
+            animator.applyRootMotion = false;
             
         }
         
@@ -63,7 +63,7 @@ namespace ReadyPlayerMe.Samples.QuickStart
                 thirdPersonMovement.Move(xAxisInput, yAxisInput);
                 thirdPersonMovement.SetIsRunning(playerInput.IsHoldingLeftShift);
             }
-            //UpdateAnimator();
+            UpdateAnimator();
         }
 
         private void UpdateAnimator()
