@@ -74,10 +74,13 @@ namespace ReadyPlayerMe.Samples.QuickStart
             defaultButtonText = openPersonalAvatarPanelButtonText.text;
             SetActiveLoading(true, "Loading...");
 
-            thirdPersonLoader.LoadAvatar(avatarUrlField.text);
-            personalAvatarPanel.SetActive(false);
-            SetActiveThirdPersonalControls(true);
-            AnalyticsRuntimeLogger.EventLogger.LogPersonalAvatarLoading(avatarUrlField.text);
+            if (!string.IsNullOrEmpty(avatarUrlField.text))
+            {
+                thirdPersonLoader.LoadAvatar(avatarUrlField.text);
+                personalAvatarPanel.SetActive(false);
+                SetActiveThirdPersonalControls(true);
+                AnalyticsRuntimeLogger.EventLogger.LogPersonalAvatarLoading(avatarUrlField.text);
+            }
         }
 
         private void OnAvatarUrlFieldValueChanged(string url)
