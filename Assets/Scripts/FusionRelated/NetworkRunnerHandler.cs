@@ -17,8 +17,8 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
     private NetworkRunner networkRunner;
     [SerializeField]
     private LobbySceneHandler lobbySceneHandler;
-    //[SerializeField]
-    //private SessionListHandler sessionListHandler;
+    [SerializeField]
+    private SessionListHandler sessionListHandler;
 
     private NetworkObject networkPlayerObject;
 
@@ -32,7 +32,7 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField]
     GameObject canvasRPM;
 
-    [SerializeField] private NetworkPrefabRef _playerPrefab;
+    [SerializeField] private GameObject _playerPrefab;
     //[SerializeField] private NetworkPrefabRef playerRpmPrefab;
     private Dictionary<PlayerRef, NetworkObject> allSpawnedCharacters = new Dictionary<PlayerRef, NetworkObject>();
 
@@ -43,7 +43,7 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
 
         //networkRunner = gameObject.AddComponent<NetworkRunner>();
         lobbySceneHandler = FindAnyObjectByType<LobbySceneHandler>();
-        //sessionListHandler = FindAnyObjectByType<SessionListHandler>();
+        sessionListHandler = FindAnyObjectByType<SessionListHandler>();
         if (lobbySceneHandler != null)
         {
             //StartCoroutine(lobbySceneHandler.StartFakeLoading(true));
@@ -63,13 +63,13 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
                 lobbySceneHandler.ShowPanel_ListAllSession();
             });
 
-            //if (sessionListHandler != null)
-            //{
-            //    sessionListHandler.goback.onClick.AddListener(() =>
-            //    {
-            //        lobbySceneHandler.ShowPanel_HostOrJoinSession();
-            //    });
-            //}
+            if (sessionListHandler != null)
+            {
+                sessionListHandler.goback.onClick.AddListener(() =>
+                {
+                    lobbySceneHandler.ShowPanel_HostOrJoinSession();
+                });
+            }
         }
     }
 
@@ -247,29 +247,29 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
 
     public void OnSessionListUpdated(NetworkRunner runner, List<SessionInfo> sessionList)
     {
-        //    //!notneedednow Debug.Log($"{nameof(NetworkRunnerHandler)} OnSessionListUpdated");
-        //    if (sessionListHandler == null)
-        //    {
-        //        return;
-        //    }
-        //    sessionListHandler.ClearList();
+        //!notneedednow Debug.Log($"{nameof(NetworkRunnerHandler)} OnSessionListUpdated");
+        if (sessionListHandler == null)
+        {
+            return;
+        }
+        sessionListHandler.ClearList();
 
-        //    if (sessionList.Count > 0)
-        //    {
-        //        foreach (SessionInfo item in sessionList)
-        //        {
-        //            Debug.Log($"{nameof(NetworkRunnerHandler)} {item.Name}");
-        //            if (item.PlayerCount >= item.MaxPlayers)
-        //            {
-        //                item.IsOpen = false;
-        //            }
-        //            else
-        //            {
-        //                item.IsOpen = true;
-        //            }
-        //            sessionListHandler.AddToList(item);
-        //        }
-        //    }
+        if (sessionList.Count > 0)
+        {
+            foreach (SessionInfo item in sessionList)
+            {
+                Debug.Log($"{nameof(NetworkRunnerHandler)} {item.Name}");
+                if (item.PlayerCount >= item.MaxPlayers)
+                {
+                    item.IsOpen = false;
+                }
+                else
+                {
+                    item.IsOpen = true;
+                }
+                sessionListHandler.AddToList(item);
+            }
+        }
 
 
     }
@@ -295,6 +295,7 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
 
         Vector3 spawnPosition = new Vector3((player.RawEncoded % runner.Config.Simulation.PlayerCount) * 3, 2, 0);
         networkPlayerObject = runner.Spawn(_playerPrefab, spawnPosition, Quaternion.identity, player);
+
         //networkPlayerObject.name = player.PlayerId.ToString();
 
         //NetworkObject noRpmPrefabObject = runner.Spawn(playerRpmPrefab, spawnPosition, Quaternion.identity, player);
