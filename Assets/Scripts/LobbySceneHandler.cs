@@ -7,7 +7,6 @@ using System;
 using ReadyPlayerMe;
 using DG.Tweening;
 using ReadyPlayerMe.Samples.AvatarCreatorWizard;
-using UnityEngine.WSA;
 
 public class LobbySceneHandler : MonoBehaviour
 {

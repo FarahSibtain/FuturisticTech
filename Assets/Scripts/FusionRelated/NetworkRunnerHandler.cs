@@ -25,7 +25,7 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
     public string playerInGameName;
 
     [SerializeField] private NetworkPrefabRef _playerPrefab;
-    [SerializeField] private NetworkPrefabRef playerRpmPrefab;
+    //[SerializeField] private NetworkPrefabRef playerRpmPrefab;
     private Dictionary<PlayerRef, NetworkObject> allSpawnedCharacters = new Dictionary<PlayerRef, NetworkObject>();
 
 
