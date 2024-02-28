@@ -6,9 +6,12 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/LobbyScene.unity
+    guid: 4fa305397798302409572e6d0af4160c
+  - enabled: 0
     path: Assets/Scenes/SelectRPMAvatar.unity
     guid: 678bfcdce35c2494bb71bd3844b22fcf
-  - enabled: 1
+  - enabled: 0
     path: Assets/Metaverese_Room/Metaverse_Room.unity
     guid: fde1d94019a5df2468b7841d577eee7c
   - enabled: 0
