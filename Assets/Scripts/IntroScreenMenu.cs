@@ -53,7 +53,7 @@ public class IntroScreenMenu : MonoBehaviour
             {
                 HolderAvatarButtons.DOScale(Vector3.zero, 0.25f).SetEase(Ease.OutCubic).SetAutoKill(true);
 
-                StartCoroutine(ControlledSceneLoading("LobbyScene", 0.1f, status));
+                StartCoroutine(ControlledSceneLoading(sceneName, 0.1f, status));
             });
 
             Button_createNewAvatar.onClick.AddListener(() =>

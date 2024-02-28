@@ -8,7 +8,7 @@ using UnityEngine;
 public class RpmCustomAvatarManager : NetworkBehaviour//, IAfterSpawned
 {
     private readonly Vector3 avatarPositionOffset = new Vector3(0, 0, 0);
-    private readonly Vector3 avatarScaleOffset = new Vector3(2, 2, 2);
+    private readonly Vector3 avatarScaleOffset = new Vector3(1, 1, 1);
     private const float FALL_TIMEOUT = 0.15f;
     private float fallTimeoutDelta;
 
@@ -50,7 +50,9 @@ public class RpmCustomAvatarManager : NetworkBehaviour//, IAfterSpawned
     public Transform mainParent;
     public PlayerRef playerRef;
 
-    /*[Networked(OnChanged = nameof(OnAvatarIdChanged))]*/ public NetworkString<_128> avatarId { get; set; }
+    [Networked]
+    public NetworkString<_128> avatarId { get; set; }
+    //[Networked(OnChanged = nameof(OnAvatarIdChanged))] public NetworkString<_128> avatarId { get; set; }
     //public static void OnAvatarIdChanged(Changed<RpmCustomAvatarManager> changed)
     //{
     //    changed.Behaviour.avatarId = changed.Behaviour.avatarId.ToString();
@@ -63,10 +65,11 @@ public class RpmCustomAvatarManager : NetworkBehaviour//, IAfterSpawned
     }
     //public NetworkMecanimAnimator networkMecanimAnimator;
 
+    private ChangeDetector _changeDetector;
+
     public override void Spawned()
     {
-
-        //Debug.Log("Spawned RpmCustomAvatarManager");
+        Debug.Log("Spawned RpmCustomAvatarManager");
         //Debug.Log("AfterSpawned rpmCustomAvatarManager");
         //if (networkObject.Runner.LocalPlayer)//(playerRef))
 
@@ -80,6 +83,8 @@ public class RpmCustomAvatarManager : NetworkBehaviour//, IAfterSpawned
         transform.name = networkObject.Id.ToString();
         //Debug.Log("AfterSpawned rpmCustomAvatarManager " + transform.name);
 
+        //_changeDetector = GetChangeDetector(ChangeDetector.Source.SimulationState);
+
         if (networkObject.HasInputAuthority)
         {
             FetchAvatarSavedInformation.instance.CheckAvatarExists();
@@ -87,12 +92,7 @@ public class RpmCustomAvatarManager : NetworkBehaviour//, IAfterSpawned
             //Debug.Log($"AfterSpawned rpmCustomAvatarManager  {avatarId} {transform.name}");
             RPC_SetAvatarId(avatarId.ToString());
         }
-    }
-
-    // public override void Spawned()
-    // {
-    //     Debug.Log("Spawned RpmCustomAvatarManager");
-    // }
+    }    
 
     public void Init()
     {
@@ -190,6 +190,16 @@ public class RpmCustomAvatarManager : NetworkBehaviour//, IAfterSpawned
     public override void FixedUpdateNetwork()
     {
         UpdateAnimator();
+
+        //foreach (var change in _changeDetector.DetectChanges(this))
+        //{
+        //    switch (change)
+        //    {
+        //        case nameof(avatarId):
+        //            avatarId = change;
+        //            break;
+        //    }
+        //}
     }
 
     // public void ControlMoveAnimation(float value)

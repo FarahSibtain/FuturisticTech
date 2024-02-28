@@ -32,7 +32,7 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
     [SerializeField]
     GameObject canvasRPM;
 
-    [SerializeField] private GameObject _playerPrefab;
+    [SerializeField] private NetworkPrefabRef _playerPrefab;
     //[SerializeField] private NetworkPrefabRef playerRpmPrefab;
     private Dictionary<PlayerRef, NetworkObject> allSpawnedCharacters = new Dictionary<PlayerRef, NetworkObject>();
 

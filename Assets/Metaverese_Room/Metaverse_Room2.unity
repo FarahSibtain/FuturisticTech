@@ -349,7 +349,7 @@ MonoBehaviour:
   loadAvatarButton: {fileID: 2018688726}
   avatarLoading: {fileID: 1128475834}
   personalAvatarPanel: {fileID: 1071404236}
-  thirdPersonLoader: {fileID: 1788067977}
+  thirdPersonLoader: {fileID: 0}
   cameraOrbit: {fileID: 377029845}
   thirdPersonController: {fileID: 1788067974}
 --- !u!4 &153455461
@@ -682,6 +682,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 100899358873900150, guid: d215af4d464ca08469559d0ba59f579e, type: 3}
+    - {fileID: 2001473560865743723, guid: d215af4d464ca08469559d0ba59f579e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -3459,7 +3460,7 @@ PrefabInstance:
     - target: {fileID: 8741277896955152619, guid: 3cb94ff40f012bb4ab10324a45fe5080,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4323,6 +4324,16 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9020453223737202363, guid: b5e780cfda18ab9469c25deff06532aa,
+        type: 3}
+      propertyPath: loadOnStart
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9020453223737202363, guid: b5e780cfda18ab9469c25deff06532aa,
+        type: 3}
+      propertyPath: previewAvatar
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -4362,18 +4373,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1788067973}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1788067977 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 5079932738637831229, guid: b5e780cfda18ab9469c25deff06532aa,
-    type: 3}
-  m_PrefabInstance: {fileID: 1788067973}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd3a2a3a4803724185a95fcbb555d55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!4 &1788067978 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5079932738637831228, guid: b5e780cfda18ab9469c25deff06532aa,

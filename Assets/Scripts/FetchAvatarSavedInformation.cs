@@ -155,4 +155,14 @@ public class FetchAvatarSavedInformation : MonoBehaviour
         PlayerPrefs.SetString("AvatarProperties_Base64Image", data.AvatarProperties.Base64Image);
         PlayerPrefs.SetString("AvatarCreatorData_IsExistingAvatar", data.IsExistingAvatar.ToString());
     }
+
+    public static void SaveAvatarInformationLocally(MyAvatarCreatorData data)
+    {
+        PlayerPrefs.SetString("AvatarProperties_Id", data.Id);
+        PlayerPrefs.SetString("AvatarProperties_Partner", data.Partner);
+        PlayerPrefs.SetInt("AvatarProperties_Gender", (int)data.Gender);
+        PlayerPrefs.SetInt("AvatarProperties_BodyType", (int)data.BodyType);
+        PlayerPrefs.SetString("AvatarProperties_Base64Image", data.Base64Image);
+        PlayerPrefs.SetString("AvatarCreatorData_IsExistingAvatar", data.IsExistingAvatar.ToString());
+    }
 }

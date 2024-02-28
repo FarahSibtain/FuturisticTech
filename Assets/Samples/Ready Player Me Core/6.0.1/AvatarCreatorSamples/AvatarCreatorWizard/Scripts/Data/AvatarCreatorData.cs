@@ -8,10 +8,20 @@ namespace ReadyPlayerMe.Samples.AvatarCreatorWizard
     {
         public AvatarProperties AvatarProperties;
         public bool IsExistingAvatar;
-        
+
         public void Awake()
         {
             AvatarProperties = new AvatarProperties();
         }
+    }
+
+    public class MyAvatarCreatorData
+    {
+        public string Id;
+        public string Partner;
+        public int Gender;
+        public int BodyType;
+        public string Base64Image;
+        public bool IsExistingAvatar;
     }
 }

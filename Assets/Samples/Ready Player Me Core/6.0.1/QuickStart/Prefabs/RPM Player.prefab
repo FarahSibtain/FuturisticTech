@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5079932738637831218}
   - component: {fileID: 5079932738637831219}
   - component: {fileID: 5079932738637831216}
-  - component: {fileID: 5079932738637831229}
   - component: {fileID: 2515599665509254229}
   - component: {fileID: 2833221289190938987}
+  - component: {fileID: 9020453223737202363}
   m_Layer: 0
   m_Name: RPM Player
   m_TagString: Untagged
@@ -29,13 +29,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5079932738637831231}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 63639783387824736}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!143 &5079932738637831218
 CharacterController:
@@ -45,9 +46,17 @@ CharacterController:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5079932738637831231}
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
   m_IsTrigger: 0
+  m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
+  serializedVersion: 3
   m_Height: 1.8
   m_Radius: 0.3
   m_SlopeLimit: 45
@@ -85,22 +94,6 @@ MonoBehaviour:
   runSpeed: 8
   gravity: -18
   jumpHeight: 2
---- !u!114 &5079932738637831229
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5079932738637831231}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dcd3a2a3a4803724185a95fcbb555d55, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  avatarUrl: 'https://models.readyplayer.me/63e9b2126f759e4d1dfabc6d.glb '
-  animatorController: {fileID: 9100000, guid: bea63b6083163f247878bb28fe8da8be, type: 2}
-  loadOnStart: 1
-  previewAvatar: {fileID: 0}
 --- !u!114 &2515599665509254229
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -132,6 +125,22 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 1
+--- !u!114 &9020453223737202363
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5079932738637831231}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bc690fcf4bc79f40b9995db2547926a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  avatarUrl: 'https://models.readyplayer.me/63e9b2126f759e4d1dfabc6d.glb '
+  animatorController: {fileID: 9100000, guid: bea63b6083163f247878bb28fe8da8be, type: 2}
+  loadOnStart: 0
+  previewAvatar: {fileID: 0}
 --- !u!1 &6323144823073172814
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,10 +164,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6323144823073172814}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1.44, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 5079932738637831228}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
