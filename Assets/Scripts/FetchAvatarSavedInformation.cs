@@ -34,10 +34,10 @@ public class FetchAvatarSavedInformation : MonoBehaviour
         }
     }
 
-    // private void Start()
-    // {
-    //     StartCoroutine(CustomStart());
-    // }
+    private void Start()
+    {
+        StartCoroutine(CustomStart());
+    }
 
     public IEnumerator CustomStart()
     {

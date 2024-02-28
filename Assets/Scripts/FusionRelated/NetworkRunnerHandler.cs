@@ -24,6 +24,14 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
 
     public string playerInGameName;
 
+    private const string sceneName = "Metaverse_Room2";
+    private const int sceneIndex = 1;
+
+    [SerializeField]
+    GameObject canvasHolder;
+    [SerializeField]
+    GameObject canvasRPM;
+
     [SerializeField] private NetworkPrefabRef _playerPrefab;
     //[SerializeField] private NetworkPrefabRef playerRpmPrefab;
     private Dictionary<PlayerRef, NetworkObject> allSpawnedCharacters = new Dictionary<PlayerRef, NetworkObject>();
@@ -47,7 +55,7 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
             });
             lobbySceneHandler.Button_hostNewGame.onClick.AddListener(() =>
             {
-                CreateGame(lobbySceneHandler.customSessionName, "GameScene", lobbySceneHandler.customSessionPlayerCount);
+                CreateGame(lobbySceneHandler.customSessionName, sceneName, lobbySceneHandler.customSessionPlayerCount);
             });
 
             lobbySceneHandler.Button_enterSessionBrowser.onClick.AddListener(() =>
@@ -110,7 +118,8 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
         if (result.Ok)
         {
             //!notneedednow Debug.Log("OK StartGame " + nameof(NetworkRunnerHandler));
-
+            canvasHolder.SetActive(false);
+            canvasRPM.SetActive(true);
         }
         else
         {
@@ -166,8 +175,9 @@ public class NetworkRunnerHandler : MonoBehaviour, INetworkRunnerCallbacks
     public void CreateGame(string sessionName, string sceneName, int maxPlayerCount)
     {
         PlayerPrefs.SetString("playerInGameName", playerInGameName);
+        SceneRef scene = SceneRef.FromIndex(sceneIndex); // SceneRef.FromIndex(SceneUtility.GetBuildIndexByScenePath($"Scenes/{sceneName}"));
         //!notneedednow Debug.Log($"CreateGame {sessionName} {sceneName} {nameof(NetworkRunnerHandler)}");
-        var clientTask = InitializeNetworkRunner(networkRunner, GameMode.Host, sessionName, SceneRef.FromIndex(SceneUtility.GetBuildIndexByScenePath($"Scenes/{sceneName}")), NetAddress.Any(), null, maxPlayerCount);
+        var clientTask = InitializeNetworkRunner(networkRunner, GameMode.Host, sessionName, scene, NetAddress.Any(), null, maxPlayerCount);
         //var clientTask = InitializeNetworkRunner(networkRunner, GameMode.Host, sessionName, SceneManager.GetActiveScene().buildIndex, NetAddress.Any(), null);
     }
 

@@ -5,6 +5,12 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/preload.unity
+    guid: 59bcfb11375d3a349bca8dd64ddab779
+  - enabled: 1
+    path: Assets/Metaverese_Room/Metaverse_Room2.unity
+    guid: da47a2065ce913f49892f46a4926438d
   - enabled: 0
     path: Assets/Scenes/LobbyScene.unity
     guid: 4fa305397798302409572e6d0af4160c
@@ -17,7 +23,4 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Samples/Ready Player Me Core/6.0.1/QuickStart/QuickStart.unity
     guid: 82ffac477ce64fd46a57d2d423d0a5f6
-  - enabled: 1
-    path: Assets/Metaverese_Room/Metaverse_Room2.unity
-    guid: da47a2065ce913f49892f46a4926438d
   m_configObjects: {}

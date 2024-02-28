@@ -367,6 +367,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &212844681 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3539581444189666990, guid: d215af4d464ca08469559d0ba59f579e,
+    type: 3}
+  m_PrefabInstance: {fileID: 543413662}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &377029842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -523,6 +529,16 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2200371167100046554, guid: d215af4d464ca08469559d0ba59f579e,
+        type: 3}
+      propertyPath: m_RenderMode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2586826954157383020, guid: d215af4d464ca08469559d0ba59f579e,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2895978088446508553, guid: d215af4d464ca08469559d0ba59f579e,
         type: 3}
       propertyPath: m_Pivot.x
@@ -649,12 +665,23 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+    - target: {fileID: 5468881658560071610, guid: d215af4d464ca08469559d0ba59f579e,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5468881658560071610, guid: d215af4d464ca08469559d0ba59f579e,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7237004035505160776, guid: d215af4d464ca08469559d0ba59f579e,
         type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 100899358873900150, guid: d215af4d464ca08469559d0ba59f579e, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -4029,6 +4056,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2798140076218922847, guid: 401b19fbe8d6cf04e8f31431d1ec049f,
         type: 3}
+      propertyPath: canvasRPM
+      value: 
+      objectReference: {fileID: 1737884706}
+    - target: {fileID: 2798140076218922847, guid: 401b19fbe8d6cf04e8f31431d1ec049f,
+        type: 3}
+      propertyPath: canvasHolder
+      value: 
+      objectReference: {fileID: 212844681}
+    - target: {fileID: 2798140076218922847, guid: 401b19fbe8d6cf04e8f31431d1ec049f,
+        type: 3}
       propertyPath: lobbySceneHandler
       value: 
       objectReference: {fileID: 730839641}
@@ -4116,6 +4153,12 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1737884706 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1346675007191858896, guid: 35eceb580bf408844b751ba7b0ec2da2,
+    type: 3}
+  m_PrefabInstance: {fileID: 2018688725}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1788067973
 PrefabInstance:
   m_ObjectHideFlags: 0
